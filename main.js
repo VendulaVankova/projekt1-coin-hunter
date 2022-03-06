@@ -9,3 +9,4 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 // sem začni psát svůj program
 
 
+//Komentář na úvod - bohužel jsem se k úkolu dostala pozdě, nicméně odkaz do Gitu vkládám dle zadání do Google Class
