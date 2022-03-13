@@ -14,31 +14,30 @@ let panacek, panacekX, panacekY, panacekSirka, panacekVyska;
 let mince, mineX, minceY, minceSirka, minceVyska;
 
 
+//function priStiskuKlavesy (event) {
+//	let panacek = document.querySelector('#panacek');
+//	console.log(event);
+//}
 
+// tato funkce se spustí při načtení stránky, tj. ve chvíli, kdy je načtené komplet HTML, CSS a všechny obrázky a zvuky
 
-function init() {
-	panacek.style.left = '420px';
-	panacek.style.top = '240px';
-
-}
-
-function jdi (event) {
-	let panacek = document.querySelector('#panacek');
-	console.log(event);
-}
-
-// tato funkce se spustí při načtení stránky
-// tj. ve chvíli, kdy je načtené komplet HTML, CSS a všechny obrázky a zvuky
 function priNacteniStranky() {
 
-	// do globálních proměnných si uložíme odkaz na objekty panáčka a mince,
-	// abychom je nemuseli při každém použití znovu na stránce hledat pomocí document.querySelector
+	// do globálních proměnných si uložíme odkaz na objekty panáčka a mince, abychom je nemuseli při každém použití znovu na stránce hledat pomocí document.querySelector
+
+	let panacek = document.getElementById('panacek');
+	let mince = document.getElementById('mince');
 
 
 	// zjistíme šířku a výšku panáčka
 
+	let panacekSirka = panacek.offsetWidth;
+	let panacekVyska = panacek.offsetHeight;
+
 
 	// a umístíme panáčka do středu okna
+	panacek.style.left = '50%';
+	panacek.style.top = '50%';
 
 
 	// umístíme panáčka na startovní pozici
@@ -46,10 +45,23 @@ function priNacteniStranky() {
 
 	// zjistíme šířku a výšku mince
 
+	let minceSirka = mince.offsetWidth;
+	let minceVyska = mince.offsetHeight;
+
 
 	// a vygenerujeme první minci na náhodné pozici
 
+	
+
 }
+
+//hudba
+let hudba = document.getElementById('hudba');
+let zvukMince = document.getElementById('zvukmince');
+let zvukFanfara = document.getElementById('zvukFanfara');
+
+
+
 
 // funkce, která umístí panáčka na jeho souřadnice
 // tj. nastaví jeho style.left a style.top na hodnoty panacekX, panacekY
