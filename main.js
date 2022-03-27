@@ -77,7 +77,10 @@ function umistiPanacka() {
 // funkce pro nahodné vygenerování nové pozice mince
 // a umístění mince na tyto souřadnice
 function novaMince() {
-	// musíme to napsat :)
+	minceX = Math.round(Math.random() * (window.innerWidth - minceSirka));
+	minceY = Math.round(Math.random() * (window.innerHeight - minceVyska));
+	mince.style.left = minceX + 'px';
+	mince.style.top = minceY + 'px';
 }
 
 // tato funkce se zavolá při stisku klávesy
