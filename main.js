@@ -36,6 +36,9 @@ function priNacteniStranky() {
 	zvukMince = document.getElementById('zvukmince');
 	zvukFanfara = document.getElementById('zvukfanfara');
 
+	//nastavíme výchozí hodnotu pro score
+
+	pocetMinci = 0;
 
 	// zjistíme šířku a výšku panáčka
 
@@ -50,31 +53,25 @@ function priNacteniStranky() {
 
 	// umístíme panáčka na startovní pozici
 
+	umistiPanacka();
 
 	// zjistíme šířku a výšku mince
 
-	let minceSirka = mince.offsetWidth;
-	let minceVyska = mince.offsetHeight;
+	minceSirka = mince.offsetWidth;
+	minceVyska = mince.offsetHeight;
 
 
 	// a vygenerujeme první minci na náhodné pozici
 
-	
+	novaMince();
 
 }
-
-//hudba
-let hudba = document.getElementById('hudba');
-let zvukMince = document.getElementById('zvukmince');
-let zvukFanfara = document.getElementById('zvukFanfara');
-
-
-
 
 // funkce, která umístí panáčka na jeho souřadnice
 // tj. nastaví jeho style.left a style.top na hodnoty panacekX, panacekY
 function umistiPanacka() {
-	// musíme to napsat :)
+	panacek.style.left = panacekX + 'px';
+	panacek.style.top = panacekY + 'px';
 }
 
 // funkce pro nahodné vygenerování nové pozice mince
