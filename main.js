@@ -11,7 +11,10 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 //nadefinujeme globální proměnné, ty jsou pak použitelné kdekoliv v programu
 
 let panacek, panacekX, panacekY, panacekSirka, panacekVyska;
-let mince, mineX, minceY, minceSirka, minceVyska;
+let mince, minceX, minceY, minceSirka, minceVyska;
+let score, pocetMinci;
+let zvukMince, zvukFanfara;
+let hrajeHudba = false;
 
 
 //function priStiskuKlavesy (event) {
@@ -25,14 +28,19 @@ function priNacteniStranky() {
 
 	// do globálních proměnných si uložíme odkaz na objekty panáčka a mince, abychom je nemuseli při každém použití znovu na stránce hledat pomocí document.querySelector
 
-	let panacek = document.getElementById('panacek');
-	let mince = document.getElementById('mince');
+	panacek = document.getElementById('panacek');
+	mince = document.getElementById('mince');
+
+	//proměnné score a zvuky
+	score = document.getElementById('score');
+	zvukMince = document.getElementById('zvukmince');
+	zvukFanfara = document.getElementById('zvukfanfara');
 
 
 	// zjistíme šířku a výšku panáčka
 
-	let panacekSirka = panacek.offsetWidth;
-	let panacekVyska = panacek.offsetHeight;
+	panacekSirka = panacek.offsetWidth;
+	panacekVyska = panacek.offsetHeight;
 
 
 	// a umístíme panáčka do středu okna
