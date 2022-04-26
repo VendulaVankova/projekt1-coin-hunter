@@ -17,11 +17,6 @@ let zvukMince, zvukFanfara;
 let hrajeHudba = false;
 
 
-//function priStiskuKlavesy (event) {
-//	let panacek = document.querySelector('#panacek');
-//	console.log(event);
-//}
-
 // tato funkce se spustí při načtení stránky, tj. ve chvíli, kdy je načtené komplet HTML, CSS a všechny obrázky a zvuky
 
 function priNacteniStranky() {
@@ -42,13 +37,13 @@ function priNacteniStranky() {
 
 	// zjistíme šířku a výšku panáčka
 
-	panacekSirka = panacek.offsetWidth;
-	panacekVyska = panacek.offsetHeight;
+	panacekSirka = panacek.width;
+	panacekVyska = panacek.height;
 
 
 	// a umístíme panáčka do středu okna
-	panacek.style.left = '50%';
-	panacek.style.top = '50%';
+	panacekX = Math.round(window.innerWidth / 2 - panacekSirka / 2);
+	panacekY = Math.round(window.innerHeight / 2 - panacekVyska / 2);
 
 
 	// umístíme panáčka na startovní pozici
@@ -57,8 +52,8 @@ function priNacteniStranky() {
 
 	// zjistíme šířku a výšku mince
 
-	minceSirka = mince.offsetWidth;
-	minceVyska = mince.offsetHeight;
+	minceSirka = mince.width;
+	minceVyska = mince.height;
 
 
 	// a vygenerujeme první minci na náhodné pozici
@@ -149,3 +144,20 @@ function otestujKolizi() {
 	}
 } 
 
+// funkce pro zvýšení skóre
+
+function zvysScore() {
+	// zvýšíme skóre o 1 (inkrementace)
+	pocetMinci++;
+
+	// vypíšeme skóre
+	score.innerText = pocetMinci;
+
+	// otestujeme dosažení 5 bodů
+	if (pocetMinci === 5) {
+		zvukFanfara.play();
+
+		// zobrazíme vítěznou hlášku
+		alert('Hurá! Vyhrála jsi!');
+	}
+}
