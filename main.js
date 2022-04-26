@@ -90,7 +90,7 @@ function novaMince() {
 function priStiskuKlavesy(udalost) {
 
 	//zapneme hudbu
-	if(!hrajeHudba) {
+	if (!hrajeHudba) {
 		document.getElementById('hudba').play();
 		console.log('Zapínám hudbu...');
 		hrajeHudba = true;
@@ -140,7 +140,12 @@ function priStiskuKlavesy(udalost) {
 
 }
 
-// fuknce pro otestování kolize panáčka s mincí
+// funkce pro otestování kolize panáčka s mincí
 function otestujKolizi() {
-	// musíme to napsat :)
+	if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
+		zvukMince.play();
+		zvysScore();
+		novaMince();
+	}
 } 
+
